@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" href="style.css"></head>
+<body>
+    <div class="iphone">
+        <div class="dynamic-island"></div>
+        <iframe src="chat.html" id="mainFrame"></iframe>
+        <div class="nav-bar">
+            <div class="nav-item active" onclick="changePage('chat.html', this)"><div class="nav-icon">💬</div>訊息</div>
+            <div class="nav-item" onclick="changePage('moments.html', this)"><div class="nav-icon">🎡</div>朋友圈</div>
+            <div class="nav-item" onclick="changePage('profile.html', this)"><div class="nav-icon">👤</div>設定</div>
+        </div>
+    </div>
+    <script>
+        function changePage(page, el) {
+            document.getElementById('mainFrame').src = page;
+            document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+            el.classList.add('active');
+        }
+    </script>
+</body>
+</html>
